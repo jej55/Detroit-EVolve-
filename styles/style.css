@@ -20,13 +20,13 @@ body {
 
 /* Header and Navigation */
 .navbar {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5e72e4 100%);
     padding: 1rem 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 20px rgba(26, 35, 126, 0.3);
 }
 
 .nav-container {
@@ -36,18 +36,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
 }
 
 .nav-logo h1 {
@@ -70,7 +58,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #64b5f6;
+    color: #82b1ff;
 }
 
 .hamburger {
@@ -89,7 +77,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a237e 0%, #3949ab 25%, #5e72e4 50%, #82b1ff 100%);
     color: white;
     padding: 120px 20px 80px;
     display: flex;
@@ -146,15 +134,15 @@ body {
 }
 
 .btn-primary {
-    background: #ff6b6b;
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4);
 }
 
 .btn-primary:hover {
-    background: #ff5252;
+    background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.5);
 }
 
 .btn-secondary {
@@ -165,7 +153,7 @@ body {
 
 .btn-secondary:hover {
     background: white;
-    color: #667eea;
+    color: #1976d2;
     transform: translateY(-2px);
 }
 
@@ -263,7 +251,7 @@ body {
 
 /* Stats Section */
 .stats {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 50%, #42a5f5 100%);
     color: white;
     padding: 80px 20px;
 }
@@ -291,7 +279,7 @@ body {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #64b5f6;
+    color: #82b1ff;
 }
 
 .stat-label {
@@ -316,7 +304,7 @@ footer {
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: #64b5f6;
+    color: #82b1ff;
 }
 
 .footer-section ul {
@@ -356,7 +344,20 @@ footer {
     }
     
     .nav-menu {
-        display: none;
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(26, 35, 126, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        backdrop-filter: blur(10px);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
     }
     
     .hero h1 {
@@ -379,5 +380,17 @@ footer {
     .features-grid,
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
